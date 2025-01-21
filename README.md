@@ -15,7 +15,7 @@ npm install
 ## Running the app
 
 ```bash
-# start development evironment (api, mongodb, and rabbitmq)
+# start development environment (api, mongodb, and rabbitmq)
 docker compose up --build
 ```
 - REST api will be running on `http://localhost:3000/api` [http://localhost:3000/api](http://localhost:3000/api)
