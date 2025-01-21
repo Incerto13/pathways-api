@@ -1,5 +1,6 @@
 ## Description
 - This is a Nest.js REST API that satisfies the Pathways technical requirements
+- Implements and passes unit tests
 - Implements and passes integration tests
 - Utilizes Typescript, MongoDB, Rabbitmq as an event/queue broker
 - Utilizes Dockerfiles and docker-compose.yml files for everything (except the integrations tests)
@@ -20,7 +21,7 @@ docker compose up --build
 ```
 - REST api will be running on `http://localhost:3000/api` [http://localhost:3000/api](http://localhost:3000/api)
 - database ui will be running on `http://localhost:8081` [http://localhost:8081](http://localhost:8081)
-- rabbitmq ui will be running on `http://localhost:15672` [http://localhost:15672](http://localhost:15672)  { username: guest, password: guest }
+- rabbitmq ui will be running on `http://localhost:15672` [http://localhost:15672](http://localhost:15672)  { username: 'guest', password: 'guest' }
 
 ## Documentation
 swagger: [http://localhost:3000/api/docs](http://localhost:3000/api/docs)
