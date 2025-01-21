@@ -20,6 +20,7 @@ docker compose up --build
 ```
 - REST api will be running on `http://localhost:3000/api` [http://localhost:3000/api](http://localhost:3000/api)
 - database ui will be running on `http://localhost:8081` [http://localhost:8081](http://localhost:8081)
+- rabbitmq ui will be running on `http://localhost:15672` [http://localhost:15672](http://localhost:15672)  { username: guest, password: guest }
 
 ## Documentation
 swagger: [http://localhost:3000/api/docs](http://localhost:3000/api/docs)
@@ -27,7 +28,7 @@ swagger: [http://localhost:3000/api/docs](http://localhost:3000/api/docs)
 
 ## Testing
 #### prerequisites
-- for integration tests db and server should be running
+- db and server should be running
 
 ```bash
 npm run int-test
