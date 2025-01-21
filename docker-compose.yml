@@ -15,7 +15,7 @@ services:
   mongo:
     build:
       context: .
-      dockerfile: Dockerfile 
+      dockerfile: docker/mongo/Dockerfile 
     image: mongo:latest
     container_name: mongo
     environment:
@@ -25,7 +25,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - ./docker/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./docker/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     restart: always
 
   mongo-express:
@@ -43,9 +43,6 @@ services:
 
   rabbitmq:
     image: rabbitmq:3-management
-    environment:    
-      - RABBITMQ_PROMETHEUS_RETENTION_INTERVAL=300
     ports:
       - 5672:5672
       - 15672:15672
-      - 15692:15692 # Prometheus metrics
