@@ -1,0 +1,5 @@
+patient_id,doctor,appointment_date,reason
+101,Dr. Smith,2024-10-21T10:00:00Z,Annual check-up
+102,Dr. Johnson,2024-10-22T14:30:00Z,Consultation
+101,Dr. Williams,2024-10-23T09:15:00Z,Follow-up
+104,Dr. Smith,2024-10-23T09:15:00Z,Consultation
