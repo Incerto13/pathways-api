@@ -7,13 +7,16 @@ import * as csv from 'csv-parser';
 import { sendCSVProcessingEvent } from './event-producer';
 import { AppointmentDto } from './dto/appointment.dto';
 import { CreateAppointmentDto } from './dto/create-appointment.dto';
+import { ConfigService } from '@nestjs/config';
 
 
 @Injectable()
 export class AppointmentService {
-  private appointmentIdCounter = 1;
 
-  constructor(@InjectModel('Appointment') private readonly appointmentModel: Model<Appointment>) {}
+  constructor(@InjectModel('Appointment') 
+  private readonly appointmentModel: Model<Appointment>,
+  private readonly configservice: ConfigService
+) {}
 
 /**
  * Get the next appointment ID(s) by finding the highest current ID and generating subsequent IDs.
@@ -78,7 +81,7 @@ export class AppointmentService {
     if (!fs.existsSync(filepath)) {
       throw new Error('CSV file does not exist.');
     }
-    await sendCSVProcessingEvent(filepath);
+    await sendCSVProcessingEvent(filepath, this.configservice);
   }
 
   /**

@@ -3,9 +3,19 @@ import * as fs from 'fs';
 import * as csv from 'csv-parser';
 import { Appointment } from './appointment.schema';
 import { AppointmentService } from './appointment.service';
+import { ConfigService } from '@nestjs/config';
 
-export async function consumeCSVProcessingEvents(appointmentService: AppointmentService): Promise<void> {
-  const connection = await amqp.connect('amqp://localhost');
+export async function consumeCSVProcessingEvents(
+    appointmentService: AppointmentService,
+    configservice: ConfigService
+): Promise<void> {
+
+  const rabbitmqUri = configservice.get<string>('RABBITMQ_URI');
+  if (!rabbitmqUri) {
+    throw new Error('RabbitMQ URI is not defined in the environment variables');
+  }
+
+  const connection = await amqp.connect(rabbitmqUri);
   const channel = await connection.createChannel();
   const queue = 'appointments';
 

@@ -14,12 +14,12 @@ import { RabbitMQModule } from './rabbitmq/rabbitmq.module';
       load: [appConfig, databaseConfig],
     }),
     MongooseModule.forRootAsync({
-      imports: [ConfigModule], // Ensure ConfigModule is imported here
+      imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
         uri: configService.get<string>('database.uri'),
         ...configService.get('database.options'),
       }),
-      inject: [ConfigService], // Inject ConfigService
+      inject: [ConfigService],
     }),
     PatientModule,
     AppointmentModule,
