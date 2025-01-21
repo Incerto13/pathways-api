@@ -30,7 +30,7 @@ swagger: [http://localhost:3000/api/docs](http://localhost:3000/api/docs)
 - for integration tests db and server should be running
 
 ```bash
-$ npm run int-test
+npm run int-test
 ```
 
 ## Docker
@@ -38,5 +38,5 @@ $ npm run int-test
 
 ```bash
 # stop all running containers
-$ make docker-clean
+make docker-clean
 ```
