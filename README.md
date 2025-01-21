@@ -1,10 +1,10 @@
 ## Description
-● This is a Nest.js REST API that satisfies the Pathways technical requirements 
-● Implements and passes integration tests
-● Utilizes Typescript, MongoDB, Rabbitmq as an event/queue broker
-● Utilizes Dockerfiles and docker-compose.yml files for everything (except the integrations tests)
-● Has swagger documentation for each endpoint
-● Also utilizes mongo-express and rabbitmq-3-management for ui inssight into the database and event queue
+- This is a Nest.js REST API that satisfies the Pathways technical requirements
+- Implements and passes integration tests
+- Utilizes Typescript, MongoDB, Rabbitmq as an event/queue broker
+- Utilizes Dockerfiles and docker-compose.yml files for everything (except the integrations tests)
+- Has swagger documentation for each endpoint
+- Also utilizes mongo-express and rabbitmq-3-management for ui inssight into the database and event queue
 
 ## Installation
 
