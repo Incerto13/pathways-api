@@ -40,5 +40,8 @@ npm run int-test
 
 ```bash
 # stop all running containers
-make docker-clean
+make docker-stop
+
+# prune all coontainers, images and volumes
+make docker-prune-all
 ```
